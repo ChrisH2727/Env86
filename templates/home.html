@@ -1,11 +1,13 @@
 {% extends "_base.html" %}
+{% load static %}
 
 {% block title %}
 Home
 {% endblock title %}
 
 {% block content %}
- <h1>Home page for now</h1> 
+ <h1>Home page for now</h1>
+    <img class="imagesize" src="{% static 'images/minions_do_weather.png' %}" alt="image not loading">
     {% if user.is_authenticated %}
         <p>hi {{ user.email }}</p>
         <p><a href="{% url 'logout' %}"> Log Out</a></p>
