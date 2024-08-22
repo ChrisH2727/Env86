@@ -10,11 +10,11 @@ Home
     <img class="imagesize" src="{% static 'images/minions_do_weather.png' %}" alt="image not loading">
     {% if user.is_authenticated %}
         <p>hi {{ user.email }}</p>
-        <p><a href="{% url 'logout' %}"> Log Out</a></p>
+        <!--p><a href=" url 'logout' %}"> Log Out</a></p-->
     {% else %}
         <p>You are not authenticated</p>
-        <a href="{% url 'login' %}"> Log In</a>
-        <a href="{% url 'signup' %}">Sign up</a>
+        <a href="{% url 'account_login' %}"> Log In</a>
+        <a href="{% url 'account_signup' %}">Sign up</a>
     {% endif %}
 {% endblock content %}
 
