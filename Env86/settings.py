@@ -93,21 +93,21 @@ WSGI_APPLICATION = 'Env86.wsgi.application'
 #    }
 # }
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'postgres',
-        'USER': 'postgres',
-        'PASSWORD': 'Redant3009',
-        'HOST': 'db',  # set in docker-compose.yml
-        'PORT': 5432,  # default Postgres port
-    }
- }
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.postgresql',
+#        'NAME': 'postgres',
+#        'USER': 'postgres',
+#        'PASSWORD': 'Redant3009',
+#        'HOST': 'db',  # set in docker-compose.yml
+#        'PORT': 5432,  # default Postgres port
+#    }
+# }
 
 # change page 151 does not work!
-# DATABASES = {
-#    'default': env.dj_db_url('DATABASE_URL', default="postgres://postgres@db/postgres")
-# }
+DATABASES = {
+    'default': env.dj_db_url('DATABASE_URL', default="postgres://postgres@db/postgres")
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
@@ -173,5 +173,5 @@ ACCOUNT_USERNAME_REQUIRED = False
 ACCOUNT_AUTHENTICATION_METHOD = 'email'  # or just email
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_UNIQUE_EMAIL = True
-
+DEFAULT_FROM_EMAIL = "admin@Env86.com"  # new
 
