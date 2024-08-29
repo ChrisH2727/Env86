@@ -1,0 +1,12 @@
+{% extends "_base.html" %}
+
+{% block title %}{{ inventory.title }}{% endblock title %}
+
+{% block content %}
+  <div class="inventory-detail">
+    <h2><a href="">{{ inventory.location }}</a></h2>
+    <p>Location: {{ inventory.sensor }}</p>
+    <p>Sensor: {{ inventory.range_max }}</p>
+    <p>Sensor: {{ inventory.range_min }}</p>
+  </div>
+{% endblock content %}

@@ -1,0 +1,12 @@
+{% extends '_base.html' %}
+
+{% block title %}Inventory{% endblock title %}
+
+{% block content %}
+  {% for inventory in inventory_list %}
+    <div>
+      <h2><a href="{{ inventory.get_absolute_url }}">{{ inventory.location }}</a></h2>
+       <h2><a href="{% url 'inventory_detail' inventory.pk %}">{{ inventory.location }}</a></h2>
+    </div>
+  {% endfor %}
+{% endblock content %}

@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = env('DJANGO_SECRET_KEY')
+SECRET_KEY = env("DJANGO_SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env.bool('DJANGO_DEBUG')
@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     # Local apps
     "accounts.apps.AccountsConfig",
     "pages.apps.PagesConfig",
+    "inventory.apps.InventoryConfig",
 
 ]
 
@@ -86,12 +87,6 @@ WSGI_APPLICATION = 'Env86.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
-# DATABASES = {
-#    'default': {
-#        'ENGINE': 'django.db.backends.sqlite3',
-#        'NAME': BASE_DIR / 'db.sqlite3',
-#    }
-# }
 
 #DATABASES = {
 #    'default': {
@@ -102,12 +97,12 @@ WSGI_APPLICATION = 'Env86.wsgi.application'
 #        'HOST': 'db',  # set in docker-compose.yml
 #        'PORT': 5432,  # default Postgres port
 #    }
-# }
+#}
 
 # change page 151 does not work!
 DATABASES = {
     'default': env.dj_db_url('DATABASE_URL', default="postgres://postgres@db/postgres")
-}
+ }
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
@@ -174,4 +169,3 @@ ACCOUNT_AUTHENTICATION_METHOD = 'email'  # or just email
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_UNIQUE_EMAIL = True
 DEFAULT_FROM_EMAIL = "admin@Env86.com"  # new
-
